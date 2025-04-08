@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { NavDesktopMenu } from "./nav-desktop-menu";
 import { NavMobileMenu } from "./nav-mobile-menu";
-import GithubIcon from "@/components/icons/github";
-import XiaohongshuIcon from "@/components/icons/xiaohongshu";
-import XIcon from "@/components/icons/x";
+// import GithubIcon from "@/components/icons/github";
+// import XiaohongshuIcon from "@/components/icons/xiaohongshu";
+// import XIcon from "@/components/icons/x";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -37,8 +37,8 @@ export function Header() {
         </div>
 
         {/* Right side buttons */}
-        <div className="flex items-center space-x-2 md:space-x-8 mr-4">
-          <Link href="https://github.com/guangzhengli" title="Github">
+        {/* <div className="flex items-center space-x-2 md:space-x-8 mr-4">
+          <Link href="https://github.com/FisherCats" title="Github">
             <GithubIcon />
           </Link>
           <Link href="https://x.com/iguangzhengli" title="X">
@@ -47,7 +47,7 @@ export function Header() {
           <Link href="https://www.xiaohongshu.com/user/profile/6076c9a2000000000101e862" title="Xiaohongshu">
             <XiaohongshuIcon />
           </Link>
-        </div>
+        </div> */}
       </motion.div>
     </header >
   );
