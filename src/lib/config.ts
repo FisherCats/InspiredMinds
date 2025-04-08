@@ -36,11 +36,11 @@ export const config = {
     // wechat: "https://storage.xxx.com/images/wechat-official-account.png",
     // buyMeACoffee: "https://www.buymeacoffee.com/xxx",
   },
-  // giscus: {
-  //   repo: "guangzhengli/hugo-ladder-exampleSite",
-  //   repoId: "R_kgDOHyVOjg",
-  //   categoryId: "DIC_kwDOHyVOjs4CQsH7",
-  // },
+  giscus: {
+    repo: "guangzhengli/hugo-ladder-exampleSite",
+    repoId: "R_kgDOHyVOjg",
+    categoryId: "DIC_kwDOHyVOjs4CQsH7",
+  },
   navigation: {
     main: [
       { 
