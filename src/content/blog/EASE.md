@@ -22,7 +22,7 @@ featured: true
 3. 利用prototype恢复方法拟合旧任务的数据经过新任务的Adapter所得到的原型。
 
 ## Overview
-![Alt text](../related_files/EASE/featured.png)
+![Alt text](./featured.png)
 
 ## 原型恢复方法
 作者认为不同的类别语义上的相关性可以跨越不同的特征空间，可以基于重用相似类别的原型生成其相关类别的原型。具体来说，作者的方法是测量旧子空间（所有类同时出现）中新旧类之间的相似性，并利用它来重建新嵌入空间中的原型。
