@@ -1,9 +1,9 @@
 export const config = {
   site: {
-    title: "Nextjs Blog Template",
-    name: "Nextjs Blog Template",
-    description: "Nextjs Blog Template",
-    keywords: ["Nextjs Blog Template", "AI", "Full Stack Developer"],
+    title: "My Inspired-Minds",
+    name: "My Inspired-Minds",
+    description: "Record inspired moments and thoughts",
+    keywords: ["Deep Learning", "AI", "Computer Vision"],
     url: "https://xxx.com",
     baseUrl: "https://xxx.com",
     image: "https://xxx.com/og-image.png",
@@ -25,28 +25,32 @@ export const config = {
     },
   },
   author: {
-    name: "Your Name",
-    email: "your.email@example.com",
-    bio: "这是一个 Nextjs 博客模板",
+    name: "FisherCat",
+    email: "fishercat_@outlook.com",
+    bio: "A Graduated student pursuing a Master in computer vision and deep learning, with a passion for novel stuff and international relations.",
   },
   social: {
-    github: "https://github.com/xxx",
-    x: "https://x.com/xxx",
-    xiaohongshu: "https://www.xiaohongshu.com/user/profile/xxx",
-    wechat: "https://storage.xxx.com/images/wechat-official-account.png",
-    buyMeACoffee: "https://www.buymeacoffee.com/xxx",
+    github: "https://github.com/FisherCats",
+    // x: "https://x.com/xxx",
+    // xiaohongshu: "https://www.xiaohongshu.com/user/profile/xxx",
+    // wechat: "https://storage.xxx.com/images/wechat-official-account.png",
+    // buyMeACoffee: "https://www.buymeacoffee.com/xxx",
   },
-  giscus: {
-    repo: "guangzhengli/hugo-ladder-exampleSite",
-    repoId: "R_kgDOHyVOjg",
-    categoryId: "DIC_kwDOHyVOjs4CQsH7",
-  },
+  // giscus: {
+  //   repo: "guangzhengli/hugo-ladder-exampleSite",
+  //   repoId: "R_kgDOHyVOjg",
+  //   categoryId: "DIC_kwDOHyVOjs4CQsH7",
+  // },
   navigation: {
     main: [
       { 
-        title: "文章", 
+        title: "Notes", 
         href: "/blog",
       },
+      {
+        title: "Paper",
+        href: "/papers",
+      }
     ],
   },
   seo: {
