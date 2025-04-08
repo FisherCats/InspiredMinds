@@ -50,7 +50,7 @@ export default function RootLayout({
         <style>
           {`
             body {
-              font-family: "LXGW WenKai Lite", sans-serif;
+              font-family: "Book Antiqua", sans-serif;
             }
           `}
         </style>
