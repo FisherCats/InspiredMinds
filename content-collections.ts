@@ -4,10 +4,6 @@ const blogs = defineCollection({
   name: "blogs",
   directory: "src/content/blog",
   include: "**/*.md",
-  assets: {
-    directory: "src/content/blog",
-    include: ["**/*.{jpg,png,gif,svg,webp}"],
-  },
   schema: (z) => ({
     title: z.string(),
     date: z.string(),
