@@ -8,8 +8,8 @@ tags:
   - prototype
   - Interpretable
   - Prototypical classifier
-image:
-  caption: 'Image credit: [**Unsplash**](./featured.png)'
+# image:
+#   caption: 'Image credit: [**Unsplash**](./featured.png)'
 ---
 > [原文](http://arxiv.org/abs/2404.08968)
 

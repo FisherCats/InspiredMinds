@@ -7,8 +7,8 @@ authors:
 tags:
   - prototype
   - Neural Network
-image:
-  caption: 'Image credit: [**Unsplash**](./featured.png)'
+# image:
+#   caption: 'Image credit: [**Unsplash**](./featured.png)'
 ---
 > [原文](http://arxiv.org/abs/1703.05175)
 ## Core idea

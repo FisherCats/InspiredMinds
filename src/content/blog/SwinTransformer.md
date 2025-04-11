@@ -8,8 +8,8 @@ tags:
   - Deep learning
   - Transformer
   - Computer Vision
-image:
-  caption: 'Image credit: [**Unsplash**](./featured.png)'
+# image:
+#   caption: 'Image credit: [**Unsplash**](./featured.png)'
 
 ---
 > [原文](https://ieeexplore.ieee.org/document/9710580/)
