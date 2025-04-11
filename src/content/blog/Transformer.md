@@ -26,6 +26,7 @@ tokenizer.vocab = {
   "你": 10, "好": 11, "，": 12, "今天": 20, "天气": 21, "如何": 22, "？": 23
 } # PAD表示补全token的ID，UNK表示不在该词表里的token，BOS表示一个输入序列的开始，EOS表示一个输入序列的结束。
 ```
+
 进行分词并转化为Token_ID 序列：
 > "你好，今天天气如何？" $\rightarrow$ ["你", "好", "，", "今天", "天气", "如何", "？"] $\rightarrow$ [10, 11, 12, 20, 21, 22, 23]
 
@@ -47,13 +48,17 @@ token_embedding = nn.Embedding(
     padding_idx=padding_idx
 )
 ```
+
 Token Embedding这一层是需要训练的。在training时，Transformer会将输入的sequence中每一个token按照其相应的token id提取出对应的在 `token_embedding` 中的词向量(词嵌入)，拼接为当前sequence的输入embedding，来进行后续的计算。
 
 继续上一节的例子，这里输入的Token_ID序列为 `[2, 10, 11, 12, 20, 21, 22, 23, 3]`。与原始序列相比，增加了BOS和EOS，token_embedding会执行
+
 ```python
 input = token_embedding[Token_ID] 
 ```
+
 来选择对应ID的token embedding继续训练。
+
 ### 3. Positional Embedding
 这一部分对输入的sequence加上一个位置编码，使模型能够理解到token的顺序先后。每一个token都会加一个对应的位置编码，维度与token embedding维度相同。在原始的transformer中，positional embedding是不被训练的，固定的。transformer对输入的sequence的奇数位置和偶数位置分别进行sin编码和cos编码。
 
@@ -115,6 +120,7 @@ def forward(self, X, mask=None):
     # 最终线性变换
     return self.proj(output)
 ```
+
 上面这个过程可以通过这个图更加直观理解：
 ![Alt text](/Transformer/MSA.png)
 在上图中，绿色的向量代表输入的单个token，橙色、粉色、红色向量分别表示当前token经过W_K, W_V, W_Q之后得到的向量，即上述公式中的Q，K，V。之后MSA会求Q与K的点乘，得到每个token与其他token的注意力矩阵(图中蓝色部分)，最终再与V进行计算。
@@ -127,6 +133,7 @@ def forward(self, X, mask=None):
 - 一个MSA模块
 - 一个FFN模块
 - LayerNorm层
+
 ```python
 # PyTorch示例
 attn_output = self.attention(x)
@@ -138,7 +145,6 @@ Encoder接收一个输入句子列表, 即sequence. 在forward的过程中会生
 
 ### 6. Decoder
 
-<!-- #### Masked Multi-Head Self-Attention -->
 解码器部分由两个多头注意力模块和一个FFN模块构成。
 ```python
 class Decoder(nn.Module):
@@ -172,11 +178,9 @@ class Decoder(nn.Module):
 ```
 
 ## The Training phase of Transformer
-
+coming soon ...
 ## The Inference phase of Transformer
-<!-- 模型的推理过程 -->
-
-
+coming soon ...
 
 
 # Vision Transformer
