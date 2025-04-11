@@ -62,7 +62,7 @@ q(x_1)+q(x_2) = 1;设q(x_1) = q$
 当我们想要对多变量数据使用欧式距离，可能会遇到一个常见的问题：如果多变量（比如数据集中的列）之间相互关联（这在实际数据集中通常是这种情况），则点与点中心（分布）之间的欧几里得距离会具有误导性，无法真实反映一个点与分布之间的实际距离。
 
 如下图所示，这是是两个变量的简单散点图。左图是两个变量之间不相关，Point 1和Point 2与分布中心的距离相等。右图是两个变量之间呈正相关。即随着一个变量（x轴）的值增加，另一变量（y轴）的值也增加。
-![Alt text](/Math Concepts markup/image-5.png)
+![Alt text](/Math_Concepts_markup/image-5.png)
 从几何上说，Point 1和Point 2两个点与分布中心的距离相等（欧几里得距离）。但是，即两点到分布的欧几里得距离相等，但实际上只有Point 1（蓝色）更接近该分布。
 
 这是因为，欧几里得距离仅是两点之间的距离，它不考虑数据集中的其余点的分布情况。因此，它不能用来真正判断一个点实际上与点的分布有多接近。所以我们需要的是更健壮的距离度量标准，该度量标准可以精确地表示一个点与分布之间的距离。
@@ -83,7 +83,7 @@ softmax是将数字转化成概率神器，进行数据归一化的利器。
 $$
 S_i = \frac{e^{z_i}}{\sum_{i=1}^ne^{z_i}} 
 $$
-![Alt text](/Math Concepts markup/image.png)
+![Alt text](/Math_Concepts_markup/image.png)
 ## Cross Entropy loss() 函数
 $$loss(x,class) = -\log(\frac{e^{x[class]}}{\sum_j e^{x[j]}}) = -\log e^{x[class]}+\log (\sum_j e^{x[j]})$$
 X:模型上各分类输出的具体值；class是真实标签。
@@ -100,7 +100,8 @@ $$S(X;\theta) = \sum_{i=1}^n\frac{\partial\log f(X_i;\theta)}{\partial \theta}$$
 $$I(\theta) = E[S(X;\theta)^2]$$
 Fisher信息量即为Score Function的二阶矩。由于$E[S(X;\theta)] = 0$，所以$I(\theta)$ = $Var[S(X;\theta)]$，即S的协方差矩阵。
  ### $E[S(X;\theta)] = 0$的证明
-$$\begin{array}{l}
+$$
+\begin{array}{l}
 \underset{p(x \mid \theta)}{\mathbb{E}}[\nabla \log p(x \mid \theta)] \\ \\
 =\int \nabla \log p(x \mid \theta) p(x \mid \theta) \mathrm{d} x \\  \\
 =\int \frac{\nabla p(x \mid \theta)}{p(x \mid \theta)} p(x \mid \theta) \mathrm{d} x \\ \\
@@ -108,7 +109,8 @@ $$\begin{array}{l}
 =\nabla \int p(x \mid \theta) \mathrm{d} x \\ \\
 =\nabla 1 \\ \\
 =0
-\end{array}$$
+\end{array}
+$$
 
 ## Regularization
 $$L(W)=\frac{1}{N} \sum_{i=1}^{N} L_{i}\left(f\left(x_{i}, W\right), y_{i}\right)+\lambda R(W)$$
@@ -124,7 +126,7 @@ L 是我们的损失函数，其中的第二项是正则化项。λ表示正则�
 Dropout是模型训练中的一种策略，能够显著的缓解模型的过拟合现象。Dropout在模型的训练过程中，通过随机的概率使得某些（一般是一半）的神经元停止工作，将训练的结果与其相关的权重关系减少。
 
 在2012年，Hinton在其论文《Improving neural networks by preventing co-adaptation of feature detectors》中提出Dropout。当一个复杂的前馈神经网络被训练在小的数据集时，容易造成过拟合。为了防止过拟合，可以通过阻止特征检测器的共同作用来提高神经网络的性能。同年，Alex、Hinton在其论文《ImageNet Classification with Deep Convolutional Neural Networks》中用到了Dropout算法，用于防止过拟合。并且，这篇论文提到的AlexNet网络模型引爆了神经网络应用热潮，并赢得了2012年图像识别大赛冠军，使得CNN成为图像分类上的核心算法模型。[inference zhihu](https://zhuanlan.zhihu.com/p/38200980)
-![Alt text](/Math Concepts markup/image-1.png)
+![Alt text](/Math_Concepts_markup/image-1.png)
 **利用Dropout的训练流程：**
 1. 在训练中，首先使一部分神经元以一定概率停止工作。
 2. 然后利用剩余的神经元进行训练，并利用BP进行权重参数更新。
@@ -133,7 +135,7 @@ Dropout是模型训练中的一种策略，能够显著的缓解模型的过拟�
 **Dropout网络训练流程：**
 参考知乎作者文章  [Microstrong](https://zhuanlan.zhihu.com/p/38200980)
 在训练过程中添加一道概率流程：
-![Alt text](/Math Concepts markup/image-2.png)
+![Alt text](/Math_Concepts_markup/image-2.png)
 图中第一个网络为常规的神经网络，第二个网络为采用Dropout策略的神经网络。
 其中 $r_i^{(l)}$ 为概率算子。$r_i^{(l)} = Bernolli(p)$，利用伯努利函数随机生成0，1向量。
 > **ATTENTION**：对上述的神经元停止其工作后，需要放缩剩余的权重大小，即$w_i = w_i * \frac{1}{1-p}$以平衡权重的损失。p为神经元被屏蔽的概率
@@ -148,9 +150,9 @@ Dropout是模型训练中的一种策略，能够显著的缓解模型的过拟�
 优点：独热编码不会受到数值编码中编码大小的影响
 缺点：如果编码项过多，储存和计算代价将陡增
 示例数据：
-![Alt text](/Math Concepts markup/image-3.png)
+![Alt text](/Math_Concepts_markup/image-3.png)
 独热编码结果：
-![Alt text](/Math Concepts markup/image-4.png)
+![Alt text](/Math_Concepts_markup/image-4.png)
 ### Lp范数
 公式：$||x||_p = \sqrt[p]{\sum_i|x_i|^p}$，表示向量$x$的Lp范数。
 L0范数：表示向量x中非0元素的个数。
