@@ -1,5 +1,5 @@
 ---
-title: KVCache
+title: KV Cache
 summary: How KV Cache works for Transformers
 date: 2025-02-28
 authors:
@@ -7,8 +7,6 @@ authors:
 tags:
   - Transformer
   - Attention mechanism
-# image:
-#   caption: 'Image credit: [**Unsplash**](./featured.png)'
 ---
 
 # KVCache
@@ -19,7 +17,7 @@ KVCache（Key-Value缓存）是Transformer模型在自回归生成任务​（�
 KVCache 技术在Transformer架构中可以优化的点分为两个层面。一个就是对于KV变量的缓存，分别是在编码器和解码器求注意力计算的过程中；另一个是可以应用在注意力激活矩阵中，对于之前的token的矩阵元素的缓存。
 
 **注意**，KVCache技术仅在decoder中应用。
-<!-- ![Alt text](transformer_structure.png) -->
+
 ## 1. Cross-attention KVCache
 首先是交叉注意力部分的KVCache。这部分的注意力要求encoder的输出与decoder中经过MSA的输出进行attention计算。在上图中可以看到，encoder的输出作为decoder中第二个MSA模块的K，V，与decoder第一个MSA模块得到的特征进行cross-attention计算。
 
