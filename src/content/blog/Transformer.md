@@ -1,6 +1,7 @@
 ---
 title: Transformer
 summary: The principle of Transformer
+date: 2025-02-27
 authors:
   - admin
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Covariance Matrix Explanation
 summary: Threads of covariance matrix
-date: 2024-02-21
+date: 2024-11-07
 authors:
   - admin
 tags:

@@ -1,5 +1,6 @@
 ---
 title: InfoNCE Loss Explanation
+date: 2024-12-19
 authors:
   - admin
 tags:

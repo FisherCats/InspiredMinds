@@ -7,6 +7,8 @@ authors:
 tags:
   - Replay
   - continual learning
+
+featured: true
 ---
 >[原文](https://arxiv.org/abs/1611.07725)
 ## 作者定义的类增量学习算法的三种特性
