@@ -1,7 +1,7 @@
 ---
 title: Git Technic
 summary: Threads of Git 
-date: 2024-12-07
+date: 2024-12-17
 authors:
   - admin
 tags:
