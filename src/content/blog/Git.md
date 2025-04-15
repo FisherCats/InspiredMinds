@@ -33,7 +33,7 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
 1. git init  从本地创建仓库
     - git status 查看仓库状态
     - git add  添加到暂存区
-        - git rm --cached <file> 将已添加到暂存区的文件撤回
+        - git rm --cached {file} 将已添加到暂存区的文件撤回
         - git add . 将当前文件夹下的所有文件都添加到暂存区中
     - git commit 提交（只会提交**暂存区**中的文件）
         - 参数“-m”：添加提交备注
@@ -48,9 +48,9 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
     - git diff --cached 比较工作区和暂存区的差异
     - git diff 版本ID1 版本ID2 比较两个提交版本之间的差异,版本2相较于版本1做出的更改
     > HEAD 指向分支的最新提交版本，HEAD～或HEAD^表示上一个提交版本。HEAD～2表示HEAD之前的两个版本
-7. git rm <文件名>  同时在工作区和暂存区中删除文件
+7. git rm {文件名}  同时在工作区和暂存区中删除文件
     - git rm -r *  递归删除某个目录下的所有子目录和文件，删除后记得要提交
-    - git rm --cached <文件名>  把文件从暂存区中删除，但是在工作区中仍然保存
+    - git rm --cached {文件名}  把文件从暂存区中删除，但是在工作区中仍然保存
 ### Git本地数据管理
 
 1. 工作区
@@ -95,8 +95,8 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
 常用语言忽略模版：[link](https://github.com/github/gitignore)
 
 ### 远程仓库
-1. git pull <remote>  拉取远程仓库，同时同步本地和远程仓库的修改。git fetch只获取远程仓库的修改内容。
-2. git push <remote><branch>  推送本地仓库
+1. git pull {remote}  拉取远程仓库，同时同步本地和远程仓库的修改。git fetch只获取远程仓库的修改内容。
+2. git push {remote}{branch}  推送本地仓库
     git push -u origin main:main 将本地仓库与远程仓库origin关联，将本地仓库的main分支推送到远程仓库的main分支
-3. git remote add <别名><url>  添加一个远程仓库
+3. git remote add <别名>{url}  添加一个远程仓库
 4. git remote -v 查看远程仓库信息
