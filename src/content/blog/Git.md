@@ -15,17 +15,18 @@ featured: true
 
 ## Git 常用命令
 ### 配置用户
-> git config --global/local user.name "FisherCat"
-> 
-> git config --global/local user.email fishercat_@outlook.com
-> 
+```bash
+ git config --global/local user.name "FisherCat"
+ 
+ git config --global/local user.email fishercat_@outlook.com
+```
 global/local表示的是对全局仓库有效还是仅对当前本地仓库有效
-
-> git config --global credential.helper store
-> 保存信息下次登录时无需再次输入
-> 
->  git config --global --list
-> 
+```bash
+ git config --global credential.helper store
+ 保存信息下次登录时无需再次输入
+ 
+  git config --global --list
+```
 查看配置信息
 
 ### 创建仓库
