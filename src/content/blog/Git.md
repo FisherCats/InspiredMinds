@@ -60,7 +60,7 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
     临时存储区，用于保存即将提交到Git仓库的修改内容 .git/index/
 3. 本地仓库
     使用git init/clone创建的仓库 .git/objects/；是Git存储代码和版本信息的主要位置
-![Img](/Git/img-20240409211148.png)
+![Img](/Git/git_procedure.png)
     
 ### Git中的文件状态
 
