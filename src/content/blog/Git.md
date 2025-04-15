@@ -11,10 +11,10 @@ tags:
 #   caption: 'Image credit: [**Unsplash**](./featured.png)'
 featured: true
 ---
-# Git Notes
 
-## Git 常用命令
-### 配置用户
+# Git 常用命令
+
+## 配置用户
 ```bash
  git config --global/local user.name "FisherCat"
  
@@ -29,7 +29,7 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
 ```
 查看配置信息
 
-### 创建仓库
+## 创建仓库
 
 1. git init  从本地创建仓库
     - git status 查看仓库状态
@@ -52,7 +52,7 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
 7. git rm `文件名`  同时在工作区和暂存区中删除文件
     - git rm -r *  递归删除某个目录下的所有子目录和文件，删除后记得要提交
     - git rm --cached `文件名`  把文件从暂存区中删除，但是在工作区中仍然保存
-### Git本地数据管理
+## Git本地数据管理
 
 1. 工作区
     本地文件目录 ".git/"
@@ -62,14 +62,14 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
     使用git init/clone创建的仓库 .git/objects/；是Git存储代码和版本信息的主要位置
 ![Img](/Git/git_procedure.png)
     
-### Git中的文件状态
+## Git中的文件状态
 
 1. 未跟踪: 刚刚创建还未被git管理
 2. 未修改: 已经由git管理但是文件的内容还未变化
 3. 已修改: 已经修改的文件，但是尚未被添加到暂存区
 4. 已暂存: 已经修改的文件已添加到暂存区
 
-### Git Reset 回退
+## Git Reset 回退
 - git reset --soft
     - 回退到某一个版本，并保存工作区和暂存区的内容
 - git reset --hard
@@ -77,7 +77,7 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
 - git reset --mixed （默认）
     - 回退到某一个版本，只保留工作区的内容
 
-### .gitignore文件
+## .gitignore文件
 版本库中不应保留的文件：
 1. 系统或者软件自动生成的文件
 2. 编译产生的中间件和结果文件
@@ -95,7 +95,7 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
     2. 忽略任何目录下名为build的文件夹：build/
 常用语言忽略模版：[link](https://github.com/github/gitignore)
 
-### 远程仓库
+## 远程仓库
 1. git pull `remote`  拉取远程仓库，同时同步本地和远程仓库的修改。git fetch只获取远程仓库的修改内容。
 2. git push `remote` `branch`  推送本地仓库
     git push -u origin main:main 将本地仓库与远程仓库origin关联，将本地仓库的main分支推送到远程仓库的main分支
