@@ -98,5 +98,5 @@ global/local表示的是对全局仓库有效还是仅对当前本地仓库有�
 1. git pull {remote}  拉取远程仓库，同时同步本地和远程仓库的修改。git fetch只获取远程仓库的修改内容。
 2. git push {remote}{branch}  推送本地仓库
     git push -u origin main:main 将本地仓库与远程仓库origin关联，将本地仓库的main分支推送到远程仓库的main分支
-3. git remote add <别名>{url}  添加一个远程仓库
+3. git remote add {别名}{url}  添加一个远程仓库
 4. git remote -v 查看远程仓库信息
