@@ -1,3 +1,16 @@
+---
+title: Git Technic
+summary: Threads of Git 
+date: 2024-12-07
+authors:
+  - admin
+tags:
+  - Git
+  - Remote Repo
+# image:
+#   caption: 'Image credit: [**Unsplash**](./featured.png)'
+featured: true
+---
 # Git Notes
 
 ## Git 常用命令
