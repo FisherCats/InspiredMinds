@@ -39,25 +39,25 @@ featured: true
 
 #### 3.2.1 单通道单卷积核
 如下图所示，现有一```[5, 5, 1]```形状的灰度图，需要用右边的卷积核对其进行卷积处理，过程是怎么样的呢？   
-![single_channel_single_kernal](/CNN/single_channel_single_kernal.png)  
+![single_channel_single_kernal](/CNN/single_channel_single_kernal.jpg)  
 根据上一节介绍，卷积操作要用卷积核对输入图像进行滑动计算的过程，那么可以得到：
-![single_channel_single_kernal_cal](/CNN/single_channel_single_kernal_cal.png)  
+![single_channel_single_kernal_cal](/CNN/single_channel_single_kernal_cal.jpg)  
 所以卷积图中的每一个元素，都是通过卷积核与输入图像对应位置的内积+bias得到的，通过卷积也将输入图像的维度进行了缩减，得到形状为```[3, 3, 1]```的特征图。
 
 #### 3.2.2 单通道多卷积核
 单通道多卷积核与单通道单卷积核相比卷积核更多，所以最后得到的特征图也更多：
-![single_channel_multi_kernal](/CNN/single_channel_multi_kernal.png)
-![single_channel_multi_kernal_cal](/CNN/single_channel_multi_kernal_cal.png)   
+![single_channel_multi_kernal](/CNN/single_channel_multi_kernal.jpg)
+![single_channel_multi_kernal_cal](/CNN/single_channel_multi_kernal_cal.jpg)   
 
 #### 3.2.3 单通道多卷积核
 在实际生活中，我们遇到彩色的图像的情况更多，这样就需要卷积层能够处理多通道的数据。在这里需要注意的是，卷积层中对于一个多通道的输入图像，每一个卷积核也分多个通道去进行卷积操作。   
-![multi_channel_single_kernal](/CNN/multi_channel_single_kernal.png)
-![multi_channel_single_kernal_cal](/CNN/multi_channel_single_kernal_cal.png)   
+![multi_channel_single_kernal](/CNN/multi_channel_single_kernal.jpg)
+![multi_channel_single_kernal_cal](/CNN/multi_channel_single_kernal_cal.jpg)   
 
 #### 3.2.4 多通道多卷积核
 通过上面的介绍，很容易扩展到多通道多卷积核的情况：  
-![multi_channel_multi_kernal](/CNN/multi_channel_multi_kernal.png)
-![multi_channel_multi_kernal_cal](/CNN/multi_channel_multi_kernal_cal.png)  
+![multi_channel_multi_kernal](/CNN/multi_channel_multi_kernal.jpg)
+![multi_channel_multi_kernal_cal](/CNN/multi_channel_multi_kernal_cal.jpg)  
 通过上面的计算，我们可以发现：  
 
 - 输入图像有多少个通道，其对应的卷积核就有多少个通道
