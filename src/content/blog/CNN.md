@@ -88,7 +88,7 @@ featured: true
 空洞卷积也叫扩张卷积或者膨胀卷积，是针对图像语义分割问题中下采样会降低图像分辨率、丢失信息而提出的一种卷积思路。空洞卷积是在卷积计算的过程中对输入特征图的位置间隔计算，让原本的卷积核获得更大的感受野。   
 ![dilated_conv](/CNN/dilated_conv.webp)   
 间隔的大小可以通过扩张率(Dilation Rate)来进行控制。这样来看标准卷积就是扩张率为0的空洞卷积：   
-![dilation_rate](/CNN/dilation_rate.webp)   
+![dilation_rate](/CNN/dilation_rate.jpg)   
 
 ### 4.5 转置卷积(Transposed Convolutions)
 转置卷积又称为反卷积(Deconvolution)，它和空洞卷积的思路相反。计算方式是先对输入特征图中的元素中间补0分隔，使得输入特征图的size变大，然后在修改后的特征图上进行标准卷积。   
