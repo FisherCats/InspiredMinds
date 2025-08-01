@@ -27,7 +27,7 @@ export const config = {
   author: {
     name: "FisherCat",
     email: "fishercat_@outlook.com",
-    bio: "A Graduated student pursuing a Master in computer vision and deep learning, with a passion for novel stuff and international relations.",
+    bio: "A Graduated student pursuing a Master in computer vision and deep learning, with a passion for expolring and coding.",
   },
   social: {
     github: "https://github.com/FisherCats",
