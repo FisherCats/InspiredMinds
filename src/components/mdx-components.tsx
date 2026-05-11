@@ -2,7 +2,24 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 
+import { CopyCodeButton } from "@/components/copy-code-button"
 import { cn } from "@/lib/utils"
+
+function getNodeText(node: React.ReactNode): string {
+  if (typeof node === "string" || typeof node === "number") {
+    return String(node)
+  }
+
+  if (Array.isArray(node)) {
+    return node.map(getNodeText).join("")
+  }
+
+  if (React.isValidElement<{ children?: React.ReactNode }>(node)) {
+    return getNodeText(node.props.children)
+  }
+
+  return ""
+}
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -145,15 +162,24 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-    <pre
-      className={cn(
-        "my-7 overflow-x-auto rounded-md bg-[#0d1117] p-5 text-[0.95rem] leading-7",
-        className
-      )}
-      {...props}
-    />
-  ),
+  pre: ({ className, children, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
+    const code = getNodeText(children).trimEnd()
+
+    return (
+      <div className="group relative my-7">
+        <CopyCodeButton code={code} />
+        <pre
+          className={cn(
+            "overflow-x-auto rounded-md bg-[#0d1117] p-5 pr-12 text-[0.95rem] leading-7",
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </pre>
+      </div>
+    )
+  },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
     const isBlockCode = className?.includes("language-") || className?.includes("hljs")
 

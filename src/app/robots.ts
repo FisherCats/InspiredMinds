@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { config } from '@/lib/config'
  
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://xxx.com/sitemap.xml',
+    sitemap: `${config.site.url}/sitemap.xml`,
   }
 }

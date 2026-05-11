@@ -1,5 +1,6 @@
 import { allBlogs } from "content-collections"
 import type { Metadata } from "next"
+import Link from "next/link"
 import { absoluteUrl } from "@/lib/utils"
 import { notFound } from "next/navigation"
 import { getTableOfContents } from "@/lib/toc"
@@ -98,6 +99,10 @@ export default async function BlogPage(props: BlogsPageProps) {
   }
 
   const toc = await getTableOfContents(blog.content)
+  const sortedBlogs = [...allBlogs].sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const currentIndex = sortedBlogs.findIndex((item: any) => item.slug === blog.slug)
+  const newerBlog = currentIndex > 0 ? sortedBlogs[currentIndex - 1] : null
+  const olderBlog = currentIndex >= 0 && currentIndex < sortedBlogs.length - 1 ? sortedBlogs[currentIndex + 1] : null
 
   return (
     <main className="relative mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:gap-12 lg:py-8 xl:grid xl:grid-cols-[minmax(0,1fr)_240px]">
@@ -118,6 +123,31 @@ export default async function BlogPage(props: BlogsPageProps) {
         <div className="min-w-0 overflow-hidden">
           <MDXRemote source={blog.content} components={components} options={options} />
         </div>
+
+        {(olderBlog || newerBlog) ? (
+          <nav className="mt-16 grid gap-4 border-t border-border pt-8 sm:grid-cols-2" aria-label="Post navigation">
+            {olderBlog ? (
+              <Link
+                href={`/blog/${olderBlog.slug}`}
+                className="rounded-md border border-border p-4 transition-colors hover:bg-accent hover:text-accent-foreground"
+              >
+                <span className="block text-sm text-muted-foreground">上一篇</span>
+                <span className="mt-1 block text-lg font-semibold">{olderBlog.title}</span>
+              </Link>
+            ) : (
+              <div />
+            )}
+            {newerBlog ? (
+              <Link
+                href={`/blog/${newerBlog.slug}`}
+                className="rounded-md border border-border p-4 text-right transition-colors hover:bg-accent hover:text-accent-foreground"
+              >
+                <span className="block text-sm text-muted-foreground">下一篇</span>
+                <span className="mt-1 block text-lg font-semibold">{newerBlog.title}</span>
+              </Link>
+            ) : null}
+          </nav>
+        ) : null}
 
         {/* <GiscusComments /> */}
       </article>

@@ -1,12 +1,14 @@
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://inspired-minds.vercel.app";
+
 export const config = {
   site: {
     title: "My Inspired-Minds",
     name: "My Inspired-Minds",
     description: "Record inspired moments and thoughts",
     keywords: ["Deep Learning", "AI", "Computer Vision"],
-    url: "https://xxx.com",
-    baseUrl: "https://xxx.com",
-    image: "https://xxx.com/og-image.png",
+    url: siteUrl,
+    baseUrl: siteUrl,
+    image: `${siteUrl}/og-image.png`,
     favicon: {
       ico: "/favicon.ico",
       png: "/favicon.png",
@@ -15,8 +17,8 @@ export const config = {
     },
     manifest: "/site.webmanifest",
     rss: {
-      title: "Nextjs Blog Template",
-      description: "Thoughts on Full-stack development, AI",
+      title: "My Inspired-Minds",
+      description: "Record inspired moments and thoughts",
       feedLinks: {
         rss2: "/rss.xml",
         json: "/feed.json",
@@ -33,7 +35,7 @@ export const config = {
     github: "https://github.com/FisherCats",
     // x: "https://x.com/xxx",
     // xiaohongshu: "https://www.xiaohongshu.com/user/profile/xxx",
-    // wechat: "https://storage.xxx.com/images/wechat-official-account.png",
+    // wechat: "https://example.com/images/wechat-official-account.png",
     // buyMeACoffee: "https://www.buymeacoffee.com/xxx",
   },
   giscus: {
@@ -54,7 +56,7 @@ export const config = {
     ],
   },
   seo: {
-    metadataBase: new URL("https://xxx.com"),
+    metadataBase: new URL(siteUrl),
     alternates: {
       canonical: './',
     },
@@ -64,7 +66,7 @@ export const config = {
     },
     twitter: {
       card: "summary_large_image" as const,
-      creator: "@xxx",
+      creator: "@FisherCats",
     },
   },
 };

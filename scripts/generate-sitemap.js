@@ -9,7 +9,7 @@ import matter from 'gray-matter';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const BASE_URL = 'https://xxx.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://inspired-minds.vercel.app';
 
 function getPriority(path) {
   if (path === '/') return 1.0;
@@ -41,7 +41,7 @@ async function scanMarkdownFiles(dir) {
       const urlPath = join(relativePath, entry.name.replace('.md', '')).replace(/\\/g, '/');
       
       files.push({
-        url: urlPath,
+        url: `${BASE_URL}/${urlPath}`,
         lastModified: data.updated || new Date().toISOString(),
         changeFrequency: getChangeFrequency(urlPath),
         priority: getPriority(urlPath)
@@ -62,13 +62,13 @@ async function generateSitemap() {
     // Add root and blog index pages
     sitemapItems.unshift(
       {
-        url: '/',
+        url: BASE_URL,
         lastModified: new Date().toISOString(),
         changeFrequency: 'daily',
         priority: 1.0
       },
       {
-        url: '/blog',
+        url: `${BASE_URL}/blog`,
         lastModified: new Date().toISOString(),
         changeFrequency: 'daily',
         priority: 0.9

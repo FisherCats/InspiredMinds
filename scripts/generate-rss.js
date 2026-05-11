@@ -10,10 +10,10 @@ import { marked } from 'marked';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const BASE_URL = 'https://xxx.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://inspired-minds.vercel.app';
 const AUTHOR = {
-  name: "Your Name",
-  email: "your.email@example.com",
+  name: "FisherCat",
+  email: "fishercat_@outlook.com",
   link: BASE_URL
 };
 
@@ -38,12 +38,16 @@ async function scanMarkdownFiles(dir) {
         content: markdown,
         url: `${BASE_URL}/${urlPath}`,
         date: new Date(data.date),
-        updated: new Date(data.updated)
+        updated: data.updated ? new Date(data.updated) : new Date(data.date)
       });
     }
   }
 
   return files;
+}
+
+function cleanOutput(content) {
+  return content.replace(/[ \t]+$/gm, '').trimEnd() + '\n';
 }
 
 async function generateRSSFeed() {
@@ -58,14 +62,14 @@ async function generateRSSFeed() {
 
     // Create feed
     const feed = new Feed({
-      title: "Your Blog",
-      description: "Your Blog Description",
+      title: "My Inspired-Minds",
+      description: "Record inspired moments and thoughts",
       id: BASE_URL,
       link: BASE_URL,
       language: "en",
       image: `${BASE_URL}/favicon.png`,
       favicon: `${BASE_URL}/favicon.ico`,
-      copyright: `All rights reserved ${new Date().getFullYear()}, Your Name`,
+      copyright: `All rights reserved ${new Date().getFullYear()}, FisherCat`,
       updated: new Date(),
       generator: "Feed for Node.js",
       feedLinks: {
@@ -93,10 +97,10 @@ async function generateRSSFeed() {
     }
 
     // Write feed files
-    await fsPromises.writeFile('./public/rss.xml', feed.rss2());
-    await fsPromises.writeFile('./public/index.xml', feed.rss2());
-    await fsPromises.writeFile('./public/atom.xml', feed.atom1());
-    await fsPromises.writeFile('./public/feed.json', feed.json1());
+    await fsPromises.writeFile('./public/rss.xml', cleanOutput(feed.rss2()));
+    await fsPromises.writeFile('./public/index.xml', cleanOutput(feed.rss2()));
+    await fsPromises.writeFile('./public/atom.xml', cleanOutput(feed.atom1()));
+    await fsPromises.writeFile('./public/feed.json', cleanOutput(feed.json1()));
 
     console.log(`Generated RSS feeds with ${posts.length} items`);
   } catch (error) {
@@ -104,4 +108,4 @@ async function generateRSSFeed() {
   }
 }
 
-generateRSSFeed().catch(console.error); 
+generateRSSFeed().catch(console.error);

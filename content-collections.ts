@@ -11,6 +11,7 @@ const blogs = defineCollection({
     featured: z.boolean().optional().default(false),
     summary: z.string().optional(),
     keywords: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional().default([]),
   }),
   transform: async (document) => {
     return {
@@ -31,6 +32,7 @@ const papers = defineCollection({
     featured: z.boolean().optional().default(false),
     summary: z.string().optional(),
     keywords: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional().default([]),
   }),
   transform: async (document) => {
     return {
