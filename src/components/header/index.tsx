@@ -7,7 +7,7 @@ export function Header() {
   return (
     <header className="pt-4">
       <div
-        className="w-[70%] mx-auto flex h-16 items-center justify-between md:px-4"
+        className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6"
       >
         {/* Mobile navigation */}
         <NavMobileMenu />

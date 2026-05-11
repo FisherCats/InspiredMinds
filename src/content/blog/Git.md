@@ -12,7 +12,7 @@ tags:
 featured: true
 ---
 
-# Git 常用命令
+## Git 常用命令
 
 ## 配置用户
 ```bash

@@ -13,8 +13,6 @@ tags:
 featured: true
 ---
 
-# Transformer
-
 ## Architecture
 
 ![Arch](/Transformer/arch.png)
@@ -126,10 +124,10 @@ def forward(self, X, mask=None):
 在上图中，绿色的向量代表输入的单个token，橙色、粉色、红色向量分别表示当前token经过W_K, W_V, W_Q之后得到的向量，即上述公式中的Q，K，V。之后MSA会求Q与K的点乘，得到每个token与其他token的注意力矩阵(图中蓝色部分)，最终再与V进行计算。
 
 #### **Attention Mask**
-屏蔽无效位置：防止模型关注填充符（Padding Tokens）或未来的信息（解码时避免看到后续词）。例如输入序列 `[I, love, NLP, [PAD], [PAD]]`，mask标记`[1,1,1,0,0]`，在MSA计算时会将PAD token得到的值抹去($-\infin$)
+屏蔽无效位置：防止模型关注填充符（Padding Tokens）或未来的信息（解码时避免看到后续词）。例如输入序列 `[I, love, NLP, [PAD], [PAD]]`，mask标记`[1,1,1,0,0]`，在MSA计算时会将PAD token得到的值抹去($-\infty$)
 
 ### 5. Encoder
-编码器部分由N个相同结构的Block组成([text])[Structure]，每个Block包含：
+编码器部分由N个相同结构的Block组成，每个Block包含：
 - 一个MSA模块
 - 一个FFN模块
 - LayerNorm层
@@ -183,9 +181,9 @@ coming soon ...
 coming soon ...
 
 
-# Vision Transformer
+## Vision Transformer
 
-## ViT Structure
+### ViT Structure
 ```python
 class VisionTransformer(nn.Module):
     def __init__(self, img_size=224, patch_size=16, in_chans=3, num_classes=1000, global_pool="token", 

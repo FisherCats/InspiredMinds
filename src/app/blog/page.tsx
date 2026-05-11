@@ -12,10 +12,9 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const blogs = allBlogs.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  console.log(blogs);
 
   return (
-    <div className="w-[70%] mx-auto px-4 py-8">
+    <div className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6">
       <div className="space-y-8">
         {blogs.map((blog: any) => (
           <article 
@@ -24,7 +23,7 @@ export default function BlogPage() {
           >
             <Link href={`/blog/${blog.slug}`}>
               <div className="flex flex-col space-y-2">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                   <h2 className="text-xl font-semibold underline underline-offset-4">
                     {blog.title}
                   </h2>
@@ -46,5 +45,4 @@ export default function BlogPage() {
     </div>
   );
 }
-
 

@@ -8,7 +8,7 @@ const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
-        "font-heading mt-8 mb-8 scroll-m-20 text-[3.2rem] leading-[3.6rem] font-semibold tracking-tight",
+        "font-heading mt-10 mb-6 scroll-m-20 text-[2.2rem] leading-tight font-semibold tracking-tight sm:text-[3rem]",
         className
       )}
       {...props}
@@ -17,7 +17,7 @@ const components = {
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cn(
-        "font-heading mt-8 mb-8 scroll-m-20 text-[1.6rem] leading-[2.4rem] font-semibold tracking-tight",
+        "font-heading mt-10 mb-5 scroll-m-20 text-[1.55rem] leading-[2.1rem] font-semibold tracking-tight sm:text-[1.8rem]",
         className
       )}
       {...props}
@@ -26,7 +26,7 @@ const components = {
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cn(
-        "font-heading mt-8 mb-8 scroll-m-20 text-[1.4rem] leading-[2.2rem] font-semibold tracking-tight",
+        "font-heading mt-8 mb-4 scroll-m-20 text-[1.3rem] leading-[1.9rem] font-semibold tracking-tight sm:text-[1.45rem]",
         className
       )}
       {...props}
@@ -35,7 +35,7 @@ const components = {
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cn(
-        "font-heading mt-8 mb-8 scroll-m-20 text-[1.2rem] leading-[2rem] font-semibold tracking-tight",
+        "font-heading mt-7 mb-4 scroll-m-20 text-[1.15rem] leading-[1.8rem] font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -44,7 +44,7 @@ const components = {
   h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h5
       className={cn(
-        "font-heading mt-8 mb-8 scroll-m-20 text-[1rem] leading-[1.8rem] font-semibold tracking-tight",
+        "font-heading mt-6 mb-3 scroll-m-20 text-[1rem] leading-[1.6rem] font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -53,7 +53,7 @@ const components = {
   h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h6
       className={cn(
-        "font-heading mt-8 mb-8 scroll-m-20 text-[0.8rem] leading-[1.6rem] font-semibold tracking-tight",
+        "font-heading mt-6 mb-3 scroll-m-20 text-[0.9rem] leading-[1.5rem] font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -62,7 +62,7 @@ const components = {
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
       className={cn(
-        "font-medium text-black transition-all duration-300 ease-in-out underline underline-offset-3",
+        "font-medium text-black transition-all duration-300 ease-in-out underline underline-offset-4 break-words",
         className
       )}
       {...props}
@@ -71,7 +71,7 @@ const components = {
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
       className={cn(
-        "my-4 text-[1.1rem] leading-[2rem]",
+        "my-4 text-[1rem] leading-[1.9rem] sm:text-[1.08rem] sm:leading-[2rem]",
         className
       )}
       {...props}
@@ -81,13 +81,13 @@ const components = {
     <strong className={cn("font-bold", className)} {...props} />
   ),
   ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+    <ul className={cn("my-6 ml-5 list-disc space-y-2 sm:ml-6", className)} {...props} />
   ),
   ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
+    <ol className={cn("my-6 ml-5 list-decimal space-y-2 sm:ml-6", className)} {...props} />
   ),
   li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <li className={cn("mt-2 ml-4 text-[1.1rem] leading-[1.6em]", className)} {...props} />
+    <li className={cn("pl-1 text-[1rem] leading-[1.75rem] sm:text-[1.08rem]", className)} {...props} />
   ),
   blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <blockquote
@@ -104,7 +104,7 @@ const components = {
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img className={cn("max-w-full w-full h-auto rounded-md", className)} alt={alt} {...props} />
+    <img className={cn("mx-auto my-6 h-auto max-w-full rounded-md object-contain", className)} alt={alt} {...props} />
   ),
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <hr className="my-4 md:my-8" {...props} />
@@ -113,8 +113,8 @@ const components = {
     <div className="my-6 w-full overflow-x-auto">
       <table
         className={cn(
-          "mx-auto mb-12 w-full border-collapse border-spacing-0 text-left",
-          "text-[1.1rem]",
+          "mx-auto mb-12 w-full min-w-max border-collapse border-spacing-0 text-left",
+          "text-[0.95rem] sm:text-[1.05rem]",
           className
         )}
         {...props}
@@ -148,22 +148,27 @@ const components = {
   pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
       className={cn(
-        "my-4 overflow-x-auto rounded-md text-[0.8rem]",
+        "my-6 overflow-x-auto rounded-md bg-[#0d1117] p-4 text-[0.88rem] leading-6",
         className
       )}
       {...props}
     />
   ),
-  code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <code
-      className={cn(
-        "w-max-2xl rounded-[0.6rem] bg-[#ededeb] px-[0.3rem] py-[0.2rem]",
-        "font-mono text-[1.0rem] font-normal text-[#ed4759]",
-        className
-      )}
-      {...props}
-    />
-  ),
+  code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
+    const isBlockCode = className?.includes("language-") || className?.includes("hljs")
+
+    return (
+      <code
+        className={cn(
+          isBlockCode
+            ? "block min-w-max bg-transparent p-0 font-mono text-[0.88rem] font-normal leading-6 text-inherit"
+            : "rounded-md bg-[#ededeb] px-[0.3rem] py-[0.15rem] font-mono text-[0.95em] font-normal text-[#c92a3d] break-words",
+          className
+        )}
+        {...props}
+      />
+    )
+  },
   small: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <small
       className={cn("text-[70%]", className)}
@@ -192,4 +197,3 @@ const components = {
 }
 
 export { components }
-

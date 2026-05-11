@@ -100,10 +100,10 @@ export default async function BlogPage(props: BlogsPageProps) {
   const toc = await getTableOfContents(blog.content)
 
   return (
-    <main className="relative py-6 w-[70%] mx-auto lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_260px]">
-      <div className="w-full px-6">
+    <main className="relative mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[minmax(0,1fr)_260px]">
+      <article className="w-full min-w-0">
         <div className="my-8">
-          <h1 className="text-[32px] font-bold">{blog.title}</h1>
+          <h1 className="text-[2rem] font-bold leading-tight sm:text-[2.4rem]">{blog.title}</h1>
         </div>
 
         <div className="my-4">
@@ -115,12 +115,12 @@ export default async function BlogPage(props: BlogsPageProps) {
           </p>
         </div>
 
-        <div className="min-w-0">
+        <div className="min-w-0 overflow-hidden">
           <MDXRemote source={blog.content} components={components} options={options} />
         </div>
 
         {/* <GiscusComments /> */}
-      </div>
+      </article>
       <div className="hidden text-sm xl:block">
         <div className="sticky top-16 -mt-6 h-[calc(100vh-3.5rem)]">
           <div className="h-full overflow-auto pb-10 flex flex-col justify-between mt-16 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">

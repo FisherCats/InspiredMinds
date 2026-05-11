@@ -12,7 +12,7 @@ tags:
 featured: true
 ---
 
-# 对比学习和自监督学习中的InfoNCE损失
+## 对比学习和自监督学习中的InfoNCE损失
 InfoNCE（Noise Contrastive Estimation）和交叉熵损失都是两个关键的概念。它们不仅在衡量概率分布之间的差异方面发挥着重要作用，而且在深度学习的自监督学习领域扮演着重要角色。虽然它们的形式和应用环境有所不同，但是我们可以发现它们之间存在着微妙的联系。
 
 InfoNCE Loss（Noise Contrastive Estimation Loss）是一种用于自监督学习的损失函数，通常用于学习特征表示或者表征学习。它基于信息论的思想，通过对比正样本和负样本的相似性来学习模型参数。

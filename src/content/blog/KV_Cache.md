@@ -9,7 +9,7 @@ tags:
   - Attention mechanism
 ---
 
-# KVCache
+## KVCache
 KVCache（Key-Value缓存）是Transformer模型在自回归生成任务​（如文本生成、机器翻译）中用于加速**推理**的一种优化技术。它通过缓存历史时间步的Key和Value向量，避免重复计算，将自注意力（Self-Attention）的计算复杂度从O(n²)降低到O(n)，显著提升长序列生成的效率。(from DP-R1)
 
 其核心思想还是**以空间换时间**，通过缓存K、V，可以避免Linear层的重复计算，从而降低计算量。在transformer的推理过程中， encoder部分接收用户输入的prompt进行编码，得到其高维特征；decoder部分会持续输出模型预测的token，每个token表示一个中文字或英文单词。此外，当模型输出完一个token后，会将其与之前输出的token拼接在一起，然后再次送入到decoder中计算。
