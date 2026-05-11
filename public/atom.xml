@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://inspired-minds.vercel.app</id>
     <title>My Inspired-Minds</title>
-    <updated>2026-05-11T12:16:21.478Z</updated>
+    <updated>2026-05-11T12:22:59.960Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>FisherCat</name>
@@ -12,8 +12,8 @@
     <link rel="alternate" href="https://inspired-minds.vercel.app"/>
     <link rel="self" href="https://inspired-minds.vercel.app/atom.xml"/>
     <subtitle>Record inspired moments and thoughts</subtitle>
-    <logo>https://inspired-minds.vercel.app/favicon.png</logo>
-    <icon>https://inspired-minds.vercel.app/favicon.ico</icon>
+    <logo>https://inspired-minds.vercel.app/fishercat.png</logo>
+    <icon>https://inspired-minds.vercel.app/fishercat.png</icon>
     <rights>All rights reserved 2026, FisherCat</rights>
     <entry>
         <title type="html"><![CDATA[Partially Shared CBM]]></title>

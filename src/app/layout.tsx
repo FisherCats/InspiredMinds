@@ -10,8 +10,7 @@ export const metadata: Metadata = {
   metadataBase: config.seo.metadataBase,
   alternates: config.seo.alternates,
   icons: [
-    { rel: "icon", url: config.site.favicon.png, sizes: "48x48", type: "image/png" },
-    { rel: "icon", url: config.site.favicon.svg, type: "image/svg+xml" },
+    { rel: "icon", url: config.site.favicon.png, sizes: "any", type: "image/png" },
     { rel: "apple-touch-icon", url: config.site.favicon.appleTouchIcon, sizes: "180x180" },
   ],
   openGraph: {
@@ -71,7 +70,7 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
         <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml" />
         <link rel="alternate" type="application/json" title="JSON" href="/feed.json" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href={config.site.favicon.png} sizes="any" type="image/png" />
       </head>
       <body className="min-w-md overflow-x-hidden">
         <Header />

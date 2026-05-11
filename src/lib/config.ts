@@ -10,10 +10,10 @@ export const config = {
     baseUrl: siteUrl,
     image: `${siteUrl}/og-image.png`,
     favicon: {
-      ico: "/favicon.ico",
-      png: "/favicon.png",
-      svg: "/favicon.svg",
-      appleTouchIcon: "/favicon.png",
+      ico: "/fishercat.png",
+      png: "/fishercat.png",
+      svg: "/fishercat.png",
+      appleTouchIcon: "/fishercat.png",
     },
     manifest: "/site.webmanifest",
     rss: {
