@@ -28,12 +28,11 @@ export default function BlogPage() {
                   <h2 className="text-xl font-semibold underline underline-offset-4">
                     {blog.title}
                   </h2>
-                  <span className="text-sm text-gray-500">
-                  {new Date(blog.date).toLocaleDateString('zh-CN', {
-                    year: 'numeric',
-                    month: 'numeric', 
-                    day: 'numeric'
-                  }).replace(/\//g, '年').replace(/\//g, '月') + '日'} · {count(blog.content)} 字
+                    <span className="text-sm text-gray-500">
+                  {(() => {
+                    const d = new Date(blog.date);
+                    return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+                  })()} · {count(blog.content)} 字
                   </span>
                 </div>
                 <p className="text-gray-600 line-clamp-2">

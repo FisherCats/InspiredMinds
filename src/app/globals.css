@@ -120,3 +120,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Allow long KaTeX display equations to scroll horizontally instead of breaking the layout */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.katex-display > .katex {
+  white-space: nowrap;
+}

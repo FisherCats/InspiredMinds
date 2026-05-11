@@ -148,7 +148,7 @@ const components = {
   pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
       className={cn(
-        "text-[0.8rem]",
+        "my-4 overflow-x-auto rounded-md text-[0.8rem]",
         className
       )}
       {...props}

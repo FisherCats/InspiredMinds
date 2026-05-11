@@ -16,7 +16,7 @@ featured: true
 # Transformer
 
 ## Architecture
-![Structure](https://img-blog.csdnimg.cn/bc79f0495726452ea3f5704c6fbe6b60.png)
+
 ![Arch](/Transformer/arch.png)
 ### 1. Out of Transformer: Tokenizer
 训练Transformer需要根据数据集来构建一个词表，为每一个词映射到唯一的Token_ID，表示Transformer理解的词空间。此外，还需要一个Tokenizer(分词器)来将输入的sequence映射为与之对应的ID序列。例如，现有一个简化词表vocab：

@@ -108,15 +108,14 @@ export default async function BlogPage(props: BlogsPageProps) {
 
         <div className="my-4">
           <p className="text-sm">
-            {new Date(blog.date).toLocaleDateString('zh-CN', {
-              year: 'numeric',
-              month: 'numeric', 
-              day: 'numeric'
-            }).replace(/\//g, '年').replace(/\//g, '月') + '日'} · {count(blog.content)} 字
+            {(() => {
+              const d = new Date(blog.date);
+              return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+            })()} · {count(blog.content)} 字
           </p>
         </div>
 
-        <div className="overflow-hidden">
+        <div className="min-w-0">
           <MDXRemote source={blog.content} components={components} options={options} />
         </div>
 
