@@ -1,6 +1,6 @@
 ---
-title: [AAAI'26] Partially Shared CBM
-summary: Concepts are shared & labled by different classes, improvement on semantic level of CBL.
+title: Partially Shared CBM
+summary: AAAI'26 | Concepts are shared & labled by different classes, improvement on semantic level of CBL.
 date: 2026-05-11
 authors:
   - admin
