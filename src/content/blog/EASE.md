@@ -38,7 +38,7 @@ featured: true
 ![Alt text](/EASE/image-2.png)
 
 此外，为了进一步提高模型性能，作者对原型进行加权：对于经过同一Adapter的数据提高权重。
-$$P^T_{b,b}\phi(x;\mathcal{A_b})+\alpha\sum_{i\neb}P^T_{b,i}\phi(x;\mathcal{A_i})$$
+$$P^T_{b,b}\phi(x;\mathcal{A_b})+\alpha\sum_{i\ne b}P^T_{b,i}\phi(x;\mathcal{A_i})$$
 
 ## Experiments
 ![Alt text](/EASE/image-3.png)

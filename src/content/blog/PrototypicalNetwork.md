@@ -10,12 +10,12 @@ tags:
 # image:
 #   caption: 'Image credit: [**Unsplash**](./featured.png)'
 ---
-> [原文](http://arxiv.org/abs/1703.05175)
+> [Paper](http://arxiv.org/abs/1703.05175)
 ## Core idea
 
 作者提出了一种新的分类方式，旨在利用类别的原型完成分类任务。通过计算测试数据与原型的“距离”，可以判断其属于哪一类。
 
-![Alt text](/Prototypical Network/image.png)
+![Alt text](/Prototypical_Network/featured.png)
 
 Left: Few-shot prototypes ck are computed as the mean of embedded support examples for each class. Right: Zero-shot prototypes ck are produced by embedding class meta-data vk. In either case, embedded query points are classified via a softmax over distances to class prototypes: $p\varphi(y = k|x) ∝ exp(−d(f_{\phi}(x), c_k))$.
 
