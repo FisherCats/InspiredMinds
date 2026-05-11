@@ -9,7 +9,7 @@ export default function Home() {
     .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className="w-[70%] mx-auto px-4 py-8">
       {/* 个人介绍部分 */}
       <div className="mb-16 space-y-4">
         <h1 className="text-4xl font-bold">{config.site.title}</h1>

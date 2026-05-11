@@ -15,7 +15,7 @@ export default function BlogPage() {
   console.log(blogs);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className="w-[70%] mx-auto px-4 py-8">
       <div className="space-y-8">
         {blogs.map((blog: any) => (
           <article 

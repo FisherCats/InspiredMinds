@@ -1,27 +1,13 @@
-"use client";
-
 import Link from "next/link";
 import { NavDesktopMenu } from "./nav-desktop-menu";
 import { NavMobileMenu } from "./nav-mobile-menu";
-// import GithubIcon from "@/components/icons/github";
-// import XiaohongshuIcon from "@/components/icons/xiaohongshu";
-// import XIcon from "@/components/icons/x";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { SquareTerminal } from "lucide-react";
 
 export function Header() {
-  const pathname = usePathname();
-  const isBlogPage = pathname.includes("/blog/");
-
   return (
     <header className="pt-4">
-      <motion.div
-        initial={{ maxWidth: "48rem" }}
-        animate={{ maxWidth: isBlogPage ? "72rem" : "48rem" }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className={cn("container mx-auto flex h-16 items-center justify-between md:px-4", isBlogPage ? "max-w-4xl xl:max-w-6xl" : "max-w-3xl")}
+      <div
+        className="w-[70%] mx-auto flex h-16 items-center justify-between md:px-4"
       >
         {/* Mobile navigation */}
         <NavMobileMenu />
@@ -48,7 +34,7 @@ export function Header() {
             <XiaohongshuIcon />
           </Link>
         </div> */}
-      </motion.div>
+      </div>
     </header >
   );
 }

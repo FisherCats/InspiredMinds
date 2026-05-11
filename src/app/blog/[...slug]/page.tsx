@@ -100,8 +100,8 @@ export default async function BlogPage(props: BlogsPageProps) {
   const toc = await getTableOfContents(blog.content)
 
   return (
-    <main className="relative py-6 max-w-full md:max-w-6xl mx-auto lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-      <div className="max-w-4xl mx-auto w-full px-6">
+    <main className="relative py-6 w-[70%] mx-auto lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_260px]">
+      <div className="w-full px-6">
         <div className="my-8">
           <h1 className="text-[32px] font-bold">{blog.title}</h1>
         </div>
