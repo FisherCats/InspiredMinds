@@ -2,6 +2,7 @@ import Link from "next/link";
 import { NavDesktopMenu } from "./nav-desktop-menu";
 import { NavMobileMenu } from "./nav-mobile-menu";
 import { SquareTerminal } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
   return (
@@ -21,6 +22,8 @@ export function Header() {
         <div className="hidden md:block">
           <NavDesktopMenu />
         </div>
+
+        <ThemeToggle />
 
         {/* Right side buttons */}
         {/* <div className="flex items-center space-x-2 md:space-x-8 mr-4">

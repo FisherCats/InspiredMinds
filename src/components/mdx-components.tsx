@@ -8,7 +8,7 @@ const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
-        "font-heading mt-10 mb-6 scroll-m-20 text-[2.2rem] leading-tight font-semibold tracking-tight sm:text-[3rem]",
+        "font-heading mt-12 mb-7 scroll-m-20 text-[2.35rem] leading-tight font-semibold tracking-tight sm:text-[3.15rem]",
         className
       )}
       {...props}
@@ -17,7 +17,7 @@ const components = {
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cn(
-        "font-heading mt-10 mb-5 scroll-m-20 text-[1.55rem] leading-[2.1rem] font-semibold tracking-tight sm:text-[1.8rem]",
+        "font-heading mt-11 mb-5 scroll-m-20 text-[1.7rem] leading-[2.25rem] font-semibold tracking-tight sm:text-[1.95rem]",
         className
       )}
       {...props}
@@ -26,7 +26,7 @@ const components = {
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cn(
-        "font-heading mt-8 mb-4 scroll-m-20 text-[1.3rem] leading-[1.9rem] font-semibold tracking-tight sm:text-[1.45rem]",
+        "font-heading mt-9 mb-4 scroll-m-20 text-[1.4rem] leading-[2rem] font-semibold tracking-tight sm:text-[1.58rem]",
         className
       )}
       {...props}
@@ -35,7 +35,7 @@ const components = {
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cn(
-        "font-heading mt-7 mb-4 scroll-m-20 text-[1.15rem] leading-[1.8rem] font-semibold tracking-tight",
+        "font-heading mt-8 mb-4 scroll-m-20 text-[1.25rem] leading-[1.9rem] font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -44,7 +44,7 @@ const components = {
   h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h5
       className={cn(
-        "font-heading mt-6 mb-3 scroll-m-20 text-[1rem] leading-[1.6rem] font-semibold tracking-tight",
+        "font-heading mt-6 mb-3 scroll-m-20 text-[1.1rem] leading-[1.7rem] font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -53,7 +53,7 @@ const components = {
   h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h6
       className={cn(
-        "font-heading mt-6 mb-3 scroll-m-20 text-[0.9rem] leading-[1.5rem] font-semibold tracking-tight",
+        "font-heading mt-6 mb-3 scroll-m-20 text-[1rem] leading-[1.6rem] font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -62,7 +62,7 @@ const components = {
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
       className={cn(
-        "font-medium text-black transition-all duration-300 ease-in-out underline underline-offset-4 break-words",
+        "font-medium text-foreground transition-all duration-300 ease-in-out underline underline-offset-4 break-words",
         className
       )}
       {...props}
@@ -71,7 +71,7 @@ const components = {
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
       className={cn(
-        "my-4 text-[1rem] leading-[1.9rem] sm:text-[1.08rem] sm:leading-[2rem]",
+        "my-5 text-[1.08rem] leading-[2rem] sm:text-[1.16rem] sm:leading-[2.15rem]",
         className
       )}
       {...props}
@@ -87,12 +87,12 @@ const components = {
     <ol className={cn("my-6 ml-5 list-decimal space-y-2 sm:ml-6", className)} {...props} />
   ),
   li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <li className={cn("pl-1 text-[1rem] leading-[1.75rem] sm:text-[1.08rem]", className)} {...props} />
+    <li className={cn("pl-1 text-[1.08rem] leading-[1.9rem] sm:text-[1.16rem]", className)} {...props} />
   ),
   blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <blockquote
       className={cn(
-        "my-6 border-l-[3px] border-[#343a40] pl-4",
+        "my-6 border-l-[3px] border-border pl-4",
         className
       )}
       {...props}
@@ -114,7 +114,7 @@ const components = {
       <table
         className={cn(
           "mx-auto mb-12 w-full min-w-max border-collapse border-spacing-0 text-left",
-          "text-[0.95rem] sm:text-[1.05rem]",
+          "text-[1rem] sm:text-[1.1rem]",
           className
         )}
         {...props}
@@ -130,7 +130,7 @@ const components = {
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
       className={cn(
-        "border-b border-solid border-[#ced4da] p-4 text-left font-semibold",
+        "border-b border-solid border-border p-4 text-left font-semibold",
         className
       )}
       {...props}
@@ -139,7 +139,7 @@ const components = {
   td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td
       className={cn(
-        "border-b border-dashed border-[#ced4da] p-4 text-left leading-[1.5]",
+        "border-b border-dashed border-border p-4 text-left leading-[1.5]",
         className
       )}
       {...props}
@@ -148,7 +148,7 @@ const components = {
   pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
       className={cn(
-        "my-6 overflow-x-auto rounded-md bg-[#0d1117] p-4 text-[0.88rem] leading-6",
+        "my-7 overflow-x-auto rounded-md bg-[#0d1117] p-5 text-[0.95rem] leading-7",
         className
       )}
       {...props}
@@ -161,8 +161,8 @@ const components = {
       <code
         className={cn(
           isBlockCode
-            ? "block min-w-max bg-transparent p-0 font-mono text-[0.88rem] font-normal leading-6 text-inherit"
-            : "rounded-md bg-[#ededeb] px-[0.3rem] py-[0.15rem] font-mono text-[0.95em] font-normal text-[#c92a3d] break-words",
+            ? "block min-w-max bg-transparent p-0 font-mono text-[0.95rem] font-normal leading-7 text-inherit"
+            : "rounded-md bg-muted px-[0.3rem] py-[0.15rem] font-mono text-[0.95em] font-normal text-[#c92a3d] break-words dark:text-[#ff7b8a]",
           className
         )}
         {...props}

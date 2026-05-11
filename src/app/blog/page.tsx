@@ -27,14 +27,14 @@ export default function BlogPage() {
                   <h2 className="text-xl font-semibold underline underline-offset-4">
                     {blog.title}
                   </h2>
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-muted-foreground">
                   {(() => {
                     const d = new Date(blog.date);
                     return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
                   })()} · {count(blog.content)} 字
                   </span>
                 </div>
-                <p className="text-gray-600 line-clamp-2">
+                <p className="text-muted-foreground line-clamp-2">
                   {blog.summary}
                 </p>
               </div>
@@ -45,4 +45,3 @@ export default function BlogPage() {
     </div>
   );
 }
-

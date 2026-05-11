@@ -13,10 +13,10 @@ export default function Home() {
       {/* 个人介绍部分 */}
       <div className="mb-16 space-y-4">
         <h1 className="text-4xl font-bold">{config.site.title}</h1>
-        <p className="text-md text-gray-600">{config.author.bio}</p>
+        <p className="text-md text-muted-foreground">{config.author.bio}</p>
         
         {/* 社交链接 */}
-        <div className="flex space-x-2 text-gray-600">
+        <div className="flex space-x-2 text-muted-foreground">
           <Link href={config.social.github} className="underline underline-offset-4">Github</Link>
           {/* <span>·</span> */}
           {/* <Link href={config.social.x} className="underline underline-offset-4">X</Link> */}
@@ -38,14 +38,14 @@ export default function Home() {
                     <h2 className="text-xl font-semibold underline underline-offset-4">
                       {blog.title}
                     </h2>
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-muted-foreground">
                       {(() => {
                         const d = new Date(blog.date);
                         return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
                       })()} · {count(blog.content)} 字
                     </span>
                   </div>
-                  <p className="text-gray-600 line-clamp-2">
+                  <p className="text-muted-foreground line-clamp-2">
                     {blog.summary}
                   </p>
                 </div>
