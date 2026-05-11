@@ -14,7 +14,6 @@ featured: true
 ---
 > [Paper](https://arxiv.org/abs/2511.22170)
 
-# Partially Shared Concept Bottleneck Model
 ![Arch](/PSCBM/featured.png)
 
 ## Motivation
@@ -32,23 +31,35 @@ featured: true
 
 ## Concept Merge & Label
 本文提出的概念融合方法是基于相似度计算的
-![alt text](alg_merge.png)
+![alt text](/PSCBM/alg_merge.png)
 
 **1. 概念筛选** PSCBM首先计算样本与所有获取到的概念之间的相似度，得到Affinity矩阵：
 
-$$A_{i,j} = \cos(\Phi(x_i), \Psi(c_j))$$
+$$
+A_{i,j} = \cos(\Phi(x_i), \Psi(c_j))
+$$
 
 其中，每一行代表的是样本与所有概念之间的相似性分数。随后计算概念之间的相关性矩阵$Q$：
 
-$$Q_{i,j} = \frac{A_{:, i}^\top A_{:,j}}{||A_{:,i}|| ||A_{:,j}||}$$
+$$
+Q_{i,j} = \frac{A_{:, i}^\top A_{:,j}}{||A_{:,i}|| ||A_{:,j}||}
+$$
 
 该矩阵本质上计算的是Affinity矩阵中概念与概念之间的相似性，$A_{:,i}$代表的就是第$i$个概念对所有数据样本的相似度向量。
 
 **2. 概念融合** 在计算得到相关性矩阵$Q$后，选择其中分数大于阈值$\tau_{merge}$的概念作为待融合的概念。根据算法流程图，下一步将选择概念组进行融合。一个概念组$S_j = \{c_2, c_4,..., c_n\}$由多个概念构成，在语义层面上说明概念组$S_j$中的这些概念与$c_j$相似度高，需要进行融合。随后从所有的概念组中选择包含概念数量最多的概念组先进行融合：
 
-$$c_{max} \leftarrow \argmax_{c_j \in S} |S_j|$$
-$$\hat{S} \leftarrow \hat{S} \cup c_{max}$$
-$$S \leftarrow \\ (c_max \cup S_{max})$$
+$$
+c_{max} \leftarrow \argmax_{c_j \in S} |S_j|
+$$
+
+$$
+\hat{S} \leftarrow \hat{S} \cup c_{max}
+$$
+
+$$
+S \leftarrow \\ (c_max \cup S_{max})
+$$
 
 其中，$c_{max}$表示所含概念最多的概念组对应的概念，$S_{max}$表示$c_{max}$对应的概念组。完成概念筛选和融合后，我们就得到了最终的概念库。
 
