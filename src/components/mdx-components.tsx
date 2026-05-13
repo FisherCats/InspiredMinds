@@ -121,7 +121,7 @@ const components = {
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img className={cn("mx-auto my-6 h-auto max-w-full rounded-md object-contain", className)} alt={alt} {...props} />
+    <img className={cn("mx-auto my-6 block h-auto max-w-full rounded-md object-contain", className)} alt={alt} {...props} />
   ),
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <hr className="my-4 md:my-8" {...props} />
