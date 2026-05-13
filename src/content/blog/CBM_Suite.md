@@ -15,7 +15,7 @@ featured: true
 
 ## Motivation
 
-<img src="/CBM_Suite/mov.png" alt="mov" style="width: 60%; margin: 0 auto;" />
+<img src="/CBM_Suite/mov.png" alt="mov" width="60%" />
 
 虽然现有的 CBM 方法从人类可理解的层面解释模型的决策，但仍存在一些局限。现有方法往往关注模型的可解释性和性能方面，没有关注到更深层次的重要问题。本文首先对现有 CBM 方法在解释性和模型结构上的问题进行了阐述，随后引出本文的方法 CBM-Suite
 
