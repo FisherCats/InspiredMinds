@@ -151,7 +151,7 @@ export default async function BlogPage(props: BlogsPageProps) {
 
         {/* <GiscusComments /> */}
       </article>
-      <div className="hidden text-sm xl:block">
+      <div className="hidden text-base xl:block">
         <div className="sticky top-16 -mt-6 h-[calc(100vh-3.5rem)]">
           <div className="h-full overflow-auto pb-10 flex flex-col justify-between mt-16 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
             <DashboardTableOfContents toc={toc} />
