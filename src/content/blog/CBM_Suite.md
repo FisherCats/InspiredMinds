@@ -1,5 +1,5 @@
 ---
-title: Rethinking Concept Bottlenck Model: From pitfalls to Solutions
+title: Rethinking Concept Bottleneck Model:From Pitfalls to Solutions
 summary: CVPR'26 | Rethinking the effectiveness of CBMs, is it makes interpretable decisions? and How?
 date: 2026-05-12
 authors:
@@ -12,6 +12,7 @@ tags:
 featured: true
 ---
 > [Paper](https://arxiv.org/abs/2603.05629)
+
 ![arch](/CBM_Suite/arch.png)
 
 ## Motivation
@@ -83,7 +84,7 @@ concepts -> MLP(50 hidden units, 50 hidden units) -> KLG grade
 
 此外，本文作者进行实验发现，具有非线性层的CBM对概念集更加敏感：
 
-![acc_comp_linear_non_linear](acc_comp.png)
+![acc_comp_linear_non_linear](/CBM_Suite/acc_comp.png)
 
 我们从图中可以看到，Linear CBM 的性能受概念集变化的波动比较小，Non-Linear CBM 受概念集变化的波动较大。作者认为Non-Linear CBM 会依赖于有意义的概念表示来进行预测，Linear CBM 可以通过简单的线性变换完成分类。
 
