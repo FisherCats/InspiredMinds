@@ -77,13 +77,13 @@ concepts -> MLP(50 hidden units, 50 hidden units) -> KLG grade
 
 本文作者认为纯线性变换结构会影响模型的可解释性，导致模型对概念集不敏感，即使给定随机的概念集，模型也能够做出正确的预测：
 
-![linearity problem](/CBM_Suite/linearity_problem.png)
+<img src="/CBM_Suite/linearity_problem.png" alt="linearity_problem" width="70%" />
 
 这种情况在 LG-CBM 方法中比较明显。由于缺乏显式概念标签，模型直接将提取到的概念的文本特征堆叠作为概念瓶颈（LaBo，LM4CV），或通过 CLIP 软标签的形式来约束 CBL 输出与 CLIP 一致，保证模型能够提供合理的解释。但在随机概念的情况下，CLIP 得到的概念激活矩阵也是无意义的，CBM 依据随机的概念进行分类。在交叉熵损失的引导下，模型并不知晓概念是否与数据集中的样本相关联，所以需要额外的方式去判断。
 
 此外，本文作者进行实验发现，具有非线性层的CBM对概念集更加敏感：
 
-![acc_comp_linear_non_linear](/CBM_Suite/acc_comp.png)
+<img src="/CBM_Suite/acc_comp.png" alt="acc_comp_linear_non_linear" width="60%" />
 
 我们从图中可以看到，Linear CBM 的性能受概念集变化的波动比较小，Non-Linear CBM 受概念集变化的波动较大。作者认为Non-Linear CBM 会依赖于有意义的概念表示来进行预测，Linear CBM 可以通过简单的线性变换完成分类。
 
