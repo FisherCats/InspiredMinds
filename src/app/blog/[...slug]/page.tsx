@@ -120,7 +120,7 @@ export default async function BlogPage(props: BlogsPageProps) {
           </p>
         </div>
 
-        <div className="min-w-0 overflow-hidden">
+        <div className="blog-content min-w-0 overflow-hidden">
           <MDXRemote source={blog.content} components={components} options={options} />
         </div>
 

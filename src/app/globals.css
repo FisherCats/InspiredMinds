@@ -121,6 +121,15 @@
   }
 }
 
+.blog-content img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 1.5rem auto;
+  border-radius: 0.375rem;
+  object-fit: contain;
+}
+
 /* Allow long KaTeX display equations to scroll horizontally instead of breaking the layout */
 .katex-display {
   overflow-x: auto;
