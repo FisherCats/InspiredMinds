@@ -37,7 +37,7 @@ ReAct提出一种一般范式，将LLM的推理和行动过程结合起来，以
 ![Main tab](/ReAct/maintab.png)
 
 
-![mode](success_fail_mode.png)
+![mode](/ReAct/success_fail_mode.png)
 
 1. 表1中可以看出 ReAct+CoT 性能最好
    
