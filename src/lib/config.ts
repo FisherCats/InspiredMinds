@@ -52,6 +52,10 @@ export const config = {
       {
         title: "Paper",
         href: "/papers",
+      },
+      {
+        title: "Tutorials",
+        href: "/tutorials",
       }
     ],
   },

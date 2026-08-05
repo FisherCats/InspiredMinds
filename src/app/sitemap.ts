@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { allBlogs, allPapers } from 'content-collections'
+import { allBlogs, allPapers, allTutorials } from 'content-collections'
 import { config } from '@/lib/config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.9,
+    },
+    {
+      url: `${config.site.url}/tutorials`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
   ]
 
@@ -32,5 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...pages, ...blogs, ...papers]
+  const tutorials = allTutorials.map((tutorial: any) => ({
+    url: `${config.site.url}/tutorials/${tutorial.slug}`,
+    lastModified: new Date(tutorial.updated ?? tutorial.date),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }))
+
+  return [...pages, ...blogs, ...papers, ...tutorials]
 }

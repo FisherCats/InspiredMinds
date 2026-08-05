@@ -44,10 +44,11 @@ const papers = defineCollection({
 
 const tutorials = defineCollection({
   name: "tutorials",
-  directory: "src/content/tutorials",
+  directory: "src/content/tutorial",
   include: "**/*.md",
   schema: (z) => ({
     title: z.string(),
+    slug: z.string().optional(),
     date: z.string(),
     updated: z.string().optional(),
     featured: z.boolean().optional().default(false),
@@ -58,7 +59,7 @@ const tutorials = defineCollection({
   transform: async (document) => {
     return {
       ...document,
-      slug: `${document._meta.path}`,
+      slug: document.slug ?? document._meta.path,
     };
   },
 });

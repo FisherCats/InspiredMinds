@@ -13,4 +13,5 @@ tags:
 #   caption: 'Image credit: [**Unsplash**](./featured.png)'
 featured: true
 ---
-<iframe src="/CLG_CBM/Language_guided_concept_bottleneck_models_for_interpreable_continual_learning.pdf" width="100%" height="500px"></iframe>
+[pdf](https://arxiv.org/abs/2503.23283)
+<!-- <iframe src="/CLG_CBM/Language_guided_concept_bottleneck_models_for_interpreable_continual_learning.pdf" width="100%" height="500px"></iframe> -->
