@@ -42,6 +42,27 @@ const papers = defineCollection({
   },
 });
 
+const tutorials = defineCollection({
+  name: "tutorials",
+  directory: "src/content/tutorials",
+  include: "**/*.md",
+  schema: (z) => ({
+    title: z.string(),
+    date: z.string(),
+    updated: z.string().optional(),
+    featured: z.boolean().optional().default(false),
+    summary: z.string().optional(),
+    keywords: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional().default([]),
+  }),
+  transform: async (document) => {
+    return {
+      ...document,
+      slug: `${document._meta.path}`,
+    };
+  },
+});
+
 export default defineConfig({
-  collections: [blogs, papers],
+  collections: [blogs, papers, tutorials],
 });
