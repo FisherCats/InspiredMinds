@@ -33,6 +33,22 @@ ReAct提出一种一般范式，将LLM的推理和行动过程结合起来，以
 
 ## ReAct：Synergizing Reasoning & Acting
 
+ReAct 的核心思想是：让大语言模型不要只“想”，也不要只“做”，而是把推理和行动交替结合起来。
+
+传统方法大致分两类：
+
+- CoT：模型只生成内部推理链，依赖自身知识。
+- Act：模型只执行动作，比如搜索、点击、操作环境，但没有显式推理。
+
+ReAct 把两者合在一起：
+$$
+Thought \rightarrow Action \rightarrow Observation \rightarrow Thought \rightarrow ...
+$$
+Thought：模型先用自然语言进行推理，比如分解目标、制定计划、提取关键信息、修正策略。
+Action：模型执行外部动作，比如查询 Wikipedia、搜索、点击网页、操作游戏环境。
+Observation：环境返回结果。
+再 Thought：模型根据新观察继续推理，决定下一步。
+
 ### Comparing to other prompting methods
 ![Main tab](/ReAct/maintab.png)
 
